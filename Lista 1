@@ -1,0 +1,127 @@
+1. Construa um algoritmo que leia um número inteiro de horas e mostre ao usuário o
+correspondente em minutos e segundos destas horas.
+
+inicio
+
+int Horas, M , S;
+     leia("Digite quantas horas para saber em minutos e segundos: ");
+     escreva(Horas);
+M = Horas * 60; 
+S = Horas * 3600;
+    leia("As horas em minutos sao M);
+    leia("As horas em segundos sao S);
+fim
+    
+2. Construa um algoritmo que calcule a área de um círculo cujo raio é fornecido pelo
+usuário (use área= 3.14 x raio2)
+
+inicio
+
+float A, r; 
+
+leia("Digite o raio de um circulo que te informo a area: ");
+escreva(r);
+    A = 3.14 * (r*r);
+se (r > 0)
+   leia("A area do circulo e %f", A);
+senao
+  leia("Nao existe");
+
+fim
+
+3. Construa um algoritmo que calcule a média aritmética de 3 números quaisquer
+fornecidos pelo usuário.
+
+inicio
+
+float num1, num2 ,num3;
+    leia("digite 3 numeros para saber sua media: ");
+        escreva(num1);
+        escreva(num2);
+        escreva(num3);
+float media = (num1 + num2 + num3) / 3;
+    leia("A media dos 3 numeros e media);
+    
+fim
+
+4. Construa um algoritmo que a partir da leitura de dois números forneça o resto e o
+quociente da divisão do primeiro pelo segundo número.
+– Lembre-se das expressões aritméticas:
+1. mod → m mod i: resto da divisão de m por i
+2. (\) → m \ i: quociente da divisão de m por i
+Exemplo: 5 mod 2 é 1
+5 \ 2 é 2
+
+inicio
+
+int num1, num2, quociente, resto;
+leia("Digite 2 numeros para saber o quociente e resto: ");
+    escreva(num1);
+    escreva(num2);
+quociente = num1 / num2;
+resto = num1 % num2;
+        leia("o quociente e quociente e o resto e resto");
+
+fim
+
+5. Fazer um algoritmo para auxiliar um construtor a descobrir a quantidade de rolos e a
+quantidade de metros avulsos de fios que ele precisa adquirir. Sabe-se que o
+construtor tem a quantidade total de fios em metros a serem utilizados na instalação
+elétrica da obra e que cada rolo de fio tem 50 metros.
+
+inicio
+
+int rolos, fios, metros;
+    leia("Quantos metros serao necessarios?: ");
+        escreva(metros);
+se(metros > 0)
+
+rolos = metros / 50;
+fios = metros % 50;
+    leia("serao utilizados rolos rolos e fios fios avulsos");
+senao
+    leia("quantidade invalida de metros");
+fim
+
+6. Leia 2 valores A e B, que correspondem a 2 notas de um aluno. A seguir, calcule a
+média do aluno, sabendo que a nota A tem peso 3.5 e a nota B tem peso 7.5 (A soma
+dos pesos portanto é 11). Assuma que cada nota pode ir de 0 até 10.0.
+
+inicio
+
+float nota1, nota2, media;
+leia("Digite suas notas para saber a media: ");
+    escreva(nota1);
+    escreva(nota2);
+media = ((nota1 * 3.5) + (nota2 * 7.5)) / 11;
+    leia("sua media e media");
+fim
+
+7. Escreva um programa que leia o nome do funcionário, o sexo (F ou M), o número de
+matrícula do funcionário, o número de horas trabalhadas, o valor que recebe por hora
+e calcule o salário desse funcionário. A seguir, mostre todos os dados na tela, os dados
+de entrada e os dados de saída.
+
+inicio
+
+float matricula, horas_trabalho, salarioH, F, M, salario_total;    
+char  nome, sexo;
+
+leia("Qual o seu nome: ");
+    escreva(nome);
+leia("Qual o sexo (F ou M): ");
+ escreva(sexo);
+leia("Qual a matricula: ");
+    escreva("matricula);   
+leia("Quantas horas de trabalho por dia: ");
+    escreva(horas_trabalho);
+leia("Qual o ganho por hora: ");
+    escreva(salarioH);
+salario_total = horas_trabalho  * salarioH;
+
+
+leia("nome:  sexo: matricula: horas de trabalho por dia: salario por hora: salario mensal: ");
+
+
+fim
+
