@@ -1,0 +1,146 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+1. Construa um algoritmo que leia um número inteiro de horas e mostre ao usuário o
+correspondente em minutos e segundos destas horas.
+
+int main()
+{
+
+int Horas, M , S;
+     printf("Digite quantas horas para saber em minutos e segundos: ");
+     scanf("%f", &Horas);
+M = Horas * 60; 
+S = Horas * 3600;
+    printf("As horas em minutos sao %f  ", M);
+    printf("As horas em segundos sao %f  ", S );
+
+return 0;
+}
+
+2. Construa um algoritmo que calcule a área de um círculo cujo raio é fornecido pelo
+usuário (use área= 3.14 x raio2)
+
+float main()
+{
+    float A, r; 
+ 
+printf("Digite o raio de um circulo que te informo a area: ");
+scanf("%f", &r);
+    A = 3.14 * (r*r);
+if (r > 0)
+{
+    printf("A area do circulo e %f", A);
+}
+    else
+{        
+    printf("Nao existe");
+}
+
+return 0;
+}
+
+3. Construa um algoritmo que calcule a média aritmética de 3 números quaisquer
+fornecidos pelo usuário.
+
+float main()
+{
+float num1, num2 ,num3;
+    printf("digite 3 numeros para saber sua media: ");
+        scanf("%f", &num1);
+        scanf("%f", &num2);
+        scanf("%f", &num3);
+float media = (num1 + num2 + num3) / 3;
+    printf("A media dos 3 numeros e: %f", media);
+   
+return 0;
+}
+ 
+4. Construa um algoritmo que a partir da leitura de dois números forneça o resto e o
+quociente da divisão do primeiro pelo segundo número.
+– Lembre-se das expressões aritméticas:
+1. mod → m mod i: resto da divisão de m por i
+2. (\) → m \ i: quociente da divisão de m por i
+Exemplo: 5 mod 2 é 1
+5 \ 2 é 2
+
+int main()
+{
+int num1, num2, quociente, resto;
+printf("Digite 2 numeros para saber o quociente e resto: ");
+    scanf("%f,",&num1);
+    scanf("%f,",&num2);
+quociente = num1 / num2;
+resto = num1 % num2;
+        printf("o quociente e %f e o resto e %f",quociente, resto);
+
+return 0;
+}
+
+5. Fazer um algoritmo para auxiliar um construtor a descobrir a quantidade de rolos e a
+quantidade de metros avulsos de fios que ele precisa adquirir. Sabe-se que o
+construtor tem a quantidade total de fios em metros a serem utilizados na instalação
+elétrica da obra e que cada rolo de fio tem 50 metros.
+
+main(){
+
+int rolos, fios, metros;
+    printf("Quantos metros serao necessarios?: ");
+        scanf("%f", &metros);
+if(metros > 0)
+{
+rolos = metros / 50;
+fios = metros % 50;
+    printf("serao utilizados %f rolos e %f fios avulsos", rolos, fios );
+}
+else
+{
+   printf("quantidade invalida de metros");
+}
+
+return 0;
+}
+
+float main()
+{
+float nota1, nota2, media;
+printf("Digite suas notas para saber a media: ");
+    scanf("%f", &nota1);
+    scanf("%f", &nota2);
+media = ((nota1 * 3.5) + (nota2 * 7.5)) / 11;
+    printf("sua media e %f", media);
+return 0;
+}
+
+6. Leia 2 valores A e B, que correspondem a 2 notas de um aluno. A seguir, calcule a
+média do aluno, sabendo que a nota A tem peso 3.5 e a nota B tem peso 7.5 (A soma
+dos pesos portanto é 11). Assuma que cada nota pode ir de 0 até 10.0.
+
+float main()
+{
+float matricula, horas_trabalho, salarioH, F, M, salario_total;    
+char  nome, sexo;
+
+printf("Qual o seu nome: ");
+    scanf("%c", &nome);
+printf("Qual o sexo (F ou M): ", toupper);
+getchar();  
+    scanf("%c", &sexo);
+getchar();
+printf("Qual a matricula: ");
+    scanf("%f", &matricula);   
+
+printf("Quantas horas de trabalho por dia: ");
+    scanf("%f", &horas_trabalho);
+
+printf("Qual o ganho por hora: ");
+    scanf("%f", &salarioH);
+salario_total = horas_trabalho  * salarioH;
+
+
+printf("nome: %f \nsexo: %f\nmatricula: %f\nhoras de trabalho por dia: %f\nsalario por hora: %fsalario mensal: %f");
+
+return 0;
+}
