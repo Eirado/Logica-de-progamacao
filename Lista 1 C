@@ -15,7 +15,7 @@ int Horas, M , S;
 M = Horas * 60; 
 S = Horas * 3600;
     printf("As horas em minutos sao %f  ", M);
-    printf("As horas em segundos sao %f  ", S );
+    printf("\nAs horas em segundos sao %f  ", S );
 
 return 0;
 }
