@@ -120,6 +120,23 @@ dos pesos portanto é 11). Assuma que cada nota pode ir de 0 até 10.0.
 
 float main()
 {
+float nota1, nota2, media;
+printf("Digite suas notas para saber a media: ");
+    scanf("%f", &nota1);
+    scanf("%f", &nota2);
+media = ((nota1 * 3.5) + (nota2 * 7.5)) / 11;
+    printf("sua media e %f", media);
+return 0;
+}
+
+
+
+
+
+
+
+float main()
+{
 float matricula, horas_trabalho, salarioH, F, M, salario_total;    
 char  nome, sexo;
 
