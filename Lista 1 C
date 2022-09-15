@@ -133,31 +133,40 @@ return 0;
 
 
 
-
-
-float main()
+int main()
 {
-float matricula, horas_trabalho, salarioH, F, M, salario_total;    
-char  nome, sexo;
+char nome[10];
+char sexo;
+int matricula;
+float horas, salarioHora, salarioMes, salario;
 
-printf("Qual o seu nome: ");
-    scanf("%c", &nome);
-printf("Qual o sexo (F ou M): ", toupper);
-getchar();  
-    scanf("%c", &sexo);
+
+printf("qual seu nome? ");
+	scanf("%s", &nome);
+		//printf("%s", nome);
 getchar();
-printf("Qual a matricula: ");
-    scanf("%f", &matricula);   
+printf("Digite seu sexo ");
+scanf("%c", &sexo);
+	sexo = toupper(sexo);
+	getchar();
+///	printf("%c", sexo);
 
-printf("Quantas horas de trabalho por dia: ");
-    scanf("%f", &horas_trabalho);
+  printf("Digite sua matricula: ");
+  scanf("%d", &matricula);
+  //	printf("%d", matricula);
 
-printf("Qual o ganho por hora: ");
-    scanf("%f", &salarioH);
-salario_total = horas_trabalho  * salarioH;
+printf("quantas horas vc trabalha por dia? ");
+scanf("%f", &horas);
+printf("quantas vc ganha por hora em R$? ");
+scanf("%f", &salarioHora);	
+salarioMes = salarioHora * horas * 30;
 
+//printf("%f", salarioMes); 
 
-printf("nome: %f \nsexo: %f\nmatricula: %f\nhoras de trabalho por dia: %f\nsalario por hora: %fsalario mensal: %f");
-
-return 0;
+printf("\n[NOME]-----> %s\n[SEXO]-----> %c\n[MATRICULA]-----> %i\n[HORAS-DIARIAS]----->%f\n[SALARIO-HORA]----->%f\n[SALARIO-MES]----->%f"
+, nome, sexo, matricula, horas, salarioHora,salarioMes);
+	
+	
+	return 0;
 }
+
