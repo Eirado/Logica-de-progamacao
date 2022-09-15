@@ -130,7 +130,10 @@ return 0;
 }
 
 
-
+7. Escreva um programa que leia o nome do funcionário, o sexo (F ou M), o número de
+matrícula do funcionário, o número de horas trabalhadas, o valor que recebe por hora
+e calcule o salário desse funcionário. A seguir, mostre todos os dados na tela, os dados
+de entrada e os dados de saída.
 
 
 int main()
