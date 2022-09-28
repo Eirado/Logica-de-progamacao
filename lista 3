@@ -1,0 +1,787 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <math.h>
+#include <string.h>
+#include <conio.h>
+
+ /*1. Faça um programa que leia dois números e mostre qual deles é o maior
+ 2. Faça um programa que leia dois números e mostre o maior deles. Se, por acaso, os dois
+números forem iguais, imprima a mensagem “Números iguais”.
+
+int main()
+{
+
+int num1, num2, maior = 0;
+
+printf("digite 2 numeros e saiba qual e o maior: ");
+scanf("%i%i", &num1, &num2);
+
+
+if(num1 > num2)
+
+    printf("O %i e maior que %i", num1, num2);
+
+if(num1 < num2)
+
+    printf("O %i e maior que %i", num2, num1);
+
+if(num1 == num2)
+   
+    printf("O %i e igual a %i", num1, num2);   
+
+
+maior = (num1 > num2)  ? printf("O %i e maior que %i", num1, num2) :    
+        (num1 < num2)  ? printf("O %i e maior que %i", num2, num1) : 
+        (num1 == num2)  ? printf("O %i e igual a %i", num1, num2) :  printf("Digite um valor valido");
+
+}
+
+3. Faça um programa que leia um número inteiro e verifique se esse número é par ou
+ímpar.
+
+int main() 
+{
+
+int num1;
+
+printf("Digite um numero para saber se e par ou impar: ");
+scanf("%i", &num1);
+
+if(num1 % 2 == 0)
+    printf("O numero %i e par", num1);
+else    
+    printf("O numero %i e impar", num1);
+}
+
+4. Faça um programa que leia o salário de um trabalhador e o valor da prestação de um
+empréstimo. Se a prestação, for maior que 20% do salário, imprima: “Empréstimo não
+concedido.”, caso contrário, imprima: “Empréstimo concedido.” 
+ 
+int main()
+{
+
+float salario, emprestimo;
+
+printf("Para seu emprestimo ser validado e necessario ser menor do que 20%% do seu salario");
+printf("Qual seu salario e a prestacao do emprestimo ");
+scanf("%f%f", &salario, &emprestimo);
+
+if( 20 * salario /100 >= emprestimo)
+    printf("Emprestimo concedido");
+else
+printf("Emprestimo nao concedido");
+}
+
+5. Faça um programa que leia um número e, caso ele seja positivo, calcule e mostre: o
+número digitado ao quadrado e raiz quadrada do número digitado 
+
+main()
+{
+int num1, raiz, potencia;
+
+printf("Digite um numero par: ");
+scanf("%i", &num1);
+
+raiz = sqrt(num1);
+potencia = pow(num1, 2);
+
+if(num1 % 2 == 0)
+{
+printf("O quadrado de %i e %i", num1, potencia);
+    if (num1 > 0)
+    printf("A raiz de %i e %i", num1, raiz);
+    else 
+    printf("O numero deve ser positvo para ter raiz");
+}else   
+    printf("digite um valor par");
+
+}
+
+6. Faça um programa que receba a altura e o sexo de uma pessoa e calcule e mostre seu
+peso ideal, utilizando as seguintes fórmulas (em que “h” corresponde à altura):
+◦ Homens: (72,7 * h) – 58
+◦ Mulheres: (62,1 * h) – 44,7 
+ 
+int main()
+{
+
+float h, homem, mulher = 0;
+char  sexo;  
+
+printf("Digite seu sexo (M ou F) e sua altura: ");
+scanf("%c%f", &sexo, &h);
+sexo = toupper(sexo);
+ 
+if(sexo == 'M')
+     printf("Seu peso ideal e %f", homem = (72.7 * h) - 58);
+
+if(sexo == 'F')
+    printf("Seu peso ideal e %f", mulher = (62.1 * h) - 58);
+    
+}
+
+7. Leia 4 valores inteiros A, B, C e D. A seguir, se B for maior do que C e se D for maior
+do que A, e a soma de C com D for maior que a soma de A e B e se C e D, ambos, forem
+positivos e se a variável A for par escrever a mensagem "Valores aceitos", senão
+escrever "Valores nao aceitos".
+
+int main()
+{
+
+
+int A, B, C, D;
+
+printf("Digite 4 valores");
+scanf("%i%i%i%i", &A, &B, &C, &D);
+
+if(B >  C && D > A)
+{
+    if( C + D > A + B)
+{
+      if( C > 0 && D > 0 )
+      {
+        if(A % 2 == 0)
+        {
+            printf("Valores aceitos");
+        }else{
+            printf("Valores nao aceitos");
+        }
+      }
+}      
+}        
+}
+
+8. Uma empresa vende o mesmo produto para quatro diferentes estados. Cada estado
+possui uma taxa diferente de imposto sobre o produto. Faça um programa em que o
+usuário entre com o valor e o estado de destino do produto e o programa retorne o preço
+final do produto acrescido do imposto do estado em que ele será vendido. Se o estado
+digitado não for válido, mostrará uma mensagem de erro
+
+                        Estado    MG   SP   RJ    MS
+                        IMPOSTO   7%   12%  15%   8%
+
+
+int main()
+{
+
+float valor, valorFinal;
+char estado[4];
+
+printf("Qual o valor do produto? ");
+
+ scanf("%f", &valor);
+
+printf("Qual o estado de destino (MG, SP, RJ, MS) ");
+
+ scanf("%s", &estado);
+
+ //função strcmp(string1, string2) da biblioteca string.h compara duas strings
+
+ //strcmp(s1, s2) == 0, se as strings forem iguais
+
+ //strcmp(s1, s2) == 1, se as strings forem diferentes
+
+ //Neste caso estamos comparando a variavel destino com a resposta do usuario
+
+ //Duas comparações por estado pois letras minusculas e maiusculas diferem
+
+if(strcmp( estado, "mg" ) == 0 || strcmp( estado, "MG") == 0  )
+{
+    valorFinal = valor + (valor * 7 / 100);
+    printf("O valor final de MG sera: %f", valorFinal);
+
+        }else if(strcmp(estado, "sp") == 0 || strcmp(estado, "SP")== 0)
+        {
+         valorFinal = valor + (valor * 12 / 100);
+         printf("O valor final de SP sera: %f", valorFinal);
+
+            }else if(strcmp(estado, "rj") == 0 || strcmp(estado, "RJ")== 0)
+            {
+                valorFinal = valor + (valor * 15 / 100);
+                printf("O valor final de RJ sera: %f", valorFinal);
+           
+                    }else if(strcmp(estado, "ms") == 0 || strcmp(estado, "MS")== 0)
+                    {
+                        valorFinal = valor + (valor * 8 / 100);
+                        printf("O valor final de MS sera: %f", valorFinal);
+                    }else
+                        printf("Valores invalidos");
+
+
+}
+
+9. Escreva um programa que, dada a idade de um nadador, classifique-o em uma das
+seguintes categorias:
+
+                         Infantil A          5-7
+                         Infantil B          8-10
+                         Juvenil A           11-13
+                         Juvenil B           14-17        
+                         Senior              maiores de 18 anos
+
+int main()
+{
+    
+int idade;    
+    
+    printf("Qual a idade do nadado? ");
+    scanf("%i", &idade);
+
+if( idade >= 5 && idade <= 7)
+{
+    printf("O nadador e Infantil A");
+
+}else if( idade >= 8 && idade <= 10)
+{
+    printf("O nadador e Infantil B");
+
+}else if(idade >= 11 && idade <= 13)
+{
+    printf("O nadador e Juvenil A");
+    
+}else if(idade >= 14 && idade <= 17)
+{
+    printf("O nadador e Juvenil B");
+
+}else if(idade >= 18)
+{
+    printf("O nadador e senior");
+
+}else
+    printf("Nao se enquadra como nadador");
+}
+
+10) Faça um programa que leia três números inteiros positivos e efetue o cálculo de uma das
+seguintes médias de acordo com um valor numérico digitado pelo usuário e mostrado na tabela
+a seguir:
+
+
+main()
+{
+
+int num1, num2, num3, media, c;
+
+do
+{
+printf("Digite 3 numeros inteiros: ");
+scanf("%i%i%i", &num1, &num2, &num3);
+
+printf("(1) media Geometrica(2) media Ponderada(3) media Harmonica(4) media Aritmetica(0) fechar programa");
+
+printf("escolha uma das opcoes: ");
+scanf("%i", &c);
+
+switch (c)
+{
+case 1:
+    media = num1 * num2 * num3;
+    printf("A media geometrica e %i", media);
+    break;
+case 2: 
+    media = num1 + 2 *num2 + 3 * num3 / 6 ;
+    printf("A media ponderada e %i", media);
+    break;
+case 3:
+    media = 1/ 1/num1 + 1/num2 + 1/ num3;
+    printf("A media harmonica e %i", media);
+    break;
+case 4:
+    media = num1 + num2 + num3 / 3;
+    printf("A media aritmetica e %i", media);
+    break;
+default:
+    printf("Resposta invalida");
+    break;
+}
+
+printf("Aperte qualquer botao para continuar");
+getch();
+system("cls");
+
+}while (c +! '0');
+}
+
+11. leia 2 valores com uma casa decimal (x e y), que devem representar as
+coordenadas de um ponto em um plano. A seguir, determine qual o quadrante
+ao qual pertence o ponto, ou se está sobre um dos eixos cartesianos ou na
+origem (x = y = 0). Se o ponto estiver na origem, escreva a mensagem
+“Origem”. Se o ponto estiver sobre um dos eixos escreva “Eixo X” ou “Eixo Y”,
+conforme for a situação.
+
+main()
+{
+
+float num1, num2;
+printf("digite 2 numeros para saber seu quadrante  (x, y)");
+scanf("%f%f", &num1, &num2);
+
+if(num1 > 0 && num2 > 0)
+printf("Primeiro quadrante");
+
+else if(num1 < 0 && num2 > 0)
+printf("Segundo quadrante");
+
+else if(num1 < 0 && num2 < 0)
+printf("Terceiro quadrante");
+
+else if(num1 > 0 && num2 < 0)
+printf("Quarto quadrante");
+
+else if(num1 == 0 && num2 != 0)
+printf("c");
+
+else if(num1 != 0 && num2 == 0)
+printf("No eixo Y");
+
+else if(num1 == 0 && num2 == 0)
+printf("Na origem");
+}
+
+12. Faça um programa que informe o mês de acordo com o número digitado pelo usuário.
+Exemplo: Entrada = 4. Saída = Abril.
+
+
+int main()
+{
+int c;
+
+printf("Informe o numero do mes: ");
+scanf("%i", &c);
+
+switch (c)
+{
+case 1:
+    printf("\nJaneiro\n");
+    break;
+case 2:
+    printf("\nFevareiro\n");
+    break;
+case 3:
+    printf("\nMarço\n");
+    break;
+case 4:
+    printf("\nAbril\n");
+    break;
+case 5:
+    printf("\nMaio\n");
+    break;
+case 6:
+    printf("\nJunho\n");
+    break;
+case 7:
+    printf("\nJulho\n");
+    break;
+case 8:
+    printf("\nAgosto\n");
+    break;
+case 9:
+    printf("\nSetembro\n");
+    break;
+case 10:
+    printf("\nOutubro\n");
+    break;
+case 11:
+    printf("\nNovembro\n");
+    break;
+case 12:
+    printf("\nDezembro\n");
+    break;
+
+default:
+    printf("\nNao existe esse mes");
+    break;
+}}
+
+13. Reescreva o algoritmo do exercicio 11 utilizando o comando switch.
+
+int main()
+{
+
+int num1, num2, c;
+printf("digite 2 numeros para saber seu quadrante  (x, y): ");
+scanf("%i%i", &num1, &num2);
+
+
+printf("\n(1) num1 > 0 && num2 > 0\n(2)num1 < 0 && num2 > 0\n(3)num1 < 0 && num2 < 0(4)num1 > 0 && num2 < 0\n(5)num1 == 0 && num2 != 0\n(6)num1 != 0 && num2 == 0\n(7)num1 == 0 && num2 == 0");
+
+printf("\nQual seu caso? \n");
+scanf("%i", &c);
+
+switch (c)
+{
+case 1:
+    printf("Primeiro quadrante");
+    break;
+case 2:
+    printf("Segundo quadrante");
+    break;
+case 3:
+    printf("Terceiro quadrante");
+    break;
+case 4:
+    printf("Quarto quadrante");
+    break;
+case 5:
+    printf("No eixo X");
+    break;
+case 6:
+    printf("No eixo Y");
+    break;
+case 7:
+    printf("Na origem");
+    break;
+
+default:
+    printf("\nnao existe esse caso");
+    break;
+}
+}
+
+14. Usando o comando switch, escreva um programa que leia um inteiro entre 1 e 7 e
+imprima o dia da semana correspondente a esse número. Isto é, domingo, se 1, segunda-
+feira, se 2, e assim por diante.
+
+int main()
+{
+int c;
+
+printf("Informe o numero para saber o dia da semana: ");
+scanf("%i", &c);
+
+switch (c)
+{
+case 1:
+    printf("\nDomingo\n");
+    break;
+case 2:
+    printf("\nSegunda\n");
+    break;
+case 3:
+    printf("\nTerça\n");
+    break;
+case 4:
+    printf("\nQuarta\n");
+    break;
+case 5:
+    printf("\nQuinta\n");
+    break;
+case 6:
+    printf("\nSexta\n");
+    break;
+case 7:
+    printf("\nSabado\n");
+    break;
+}
+}
+
+15. Usando o comando switch, faça um algoritmo que leia o número de DDD e informe a
+qual cidade pertence, considerando só os seguintes valores:
+61 - Brasília
+71 - Salvador
+11 - São Paulo
+21 - Rio de Janeiro
+32 - Juiz de Fora
+19 - Campinas
+27 - Vitória
+31 - Belo Horizonte
+qualquer outro - uma cidade no Brasil sem identificação
+
+int main()
+{
+
+int d;
+
+printf("digite seu DDD: ");
+scanf("%i", &d);
+
+switch (d)
+{
+case 61:
+    printf("Brasilia");
+    break;
+case 71:
+    printf("Salvador");
+    break;
+case 11:
+    printf("São Paulo");
+    break;
+case 21:
+    printf("Rio de Janeiro");
+    break;
+case 32:
+    printf("Juiz de Fora");
+    break;
+case 19:
+    printf("Campinas");
+    break;
+case 27:
+    printf("Vitória");
+    break;
+case 31:
+    printf("Belo Horizonte");
+    break;
+
+default:
+    printf("ddd indisponivel");
+    break;
+}
+
+}
+
+16. Faça um programa que mostre ao usuário um menu com quatro opções de operações
+matemáticas (as operações básicas, por exemplo). O usuário escolhe uma das opções, e
+o seu programa pede dois valores numéricos e realiza a operação, mostrando o
+resultado.
+
+int main()
+{
+
+float num1, num2, resultado;
+char c = '0';
+
+do
+{
+num1, num2, resultado = 0;
+printf("\n(1) Adicao\n");
+printf("(2) Subtracao\n");
+printf("(3) Multiplicacao\n");
+printf("(4) Divisao\n");
+printf("(0) Encerrar\n");
+
+printf("\nEscolha a operacao: ");
+c = getche();
+
+if( c != '0')
+{
+printf("\nDitigite o primeiro numero: ");
+scanf("%f", &num1);
+printf("Ditigite o segundo numero: ");
+scanf("%f", &num2);
+     if( c == '1')
+     {
+       resultado = num1 + num2;
+     }else
+     {
+        if( c == '2')
+        {
+            resultado = num1 - num2;
+        }else
+        {
+            if( c == '3')
+            {
+                resultado = num1 * num2;
+            }else{
+                if( c == '4' )
+                {
+                    if( num2 != 0 )
+                    {
+                        resultado = num1 / num2;
+                    }else 
+                        printf("nao se divide por 0");
+                }
+                    
+            }
+        }
+    }
+printf("\n");
+printf("O resultado e:\t %f", resultado);
+printf("\n");
+
+//system("pause"); = getch() nesse caso pois o getch apenas espera vc digitar algo
+printf("\npressione qualquer tecla para continuar:  ");
+getch();
+system("cls");
+} 
+}while ( c != '0');
+
+
+
+
+return 0;
+}
+17. Faça um programa para verificar se determinado número inteiro lido é divisível por 3 ou
+5, mas não simultaneamente pelos dois.
+
+int main()
+{
+
+int num1, c;
+
+printf("Digite um numero para saber se e divisivel por 3 ou 5: ");
+scanf("%i", &num1);
+
+printf("\n(1) Divisivel por 3?\n(2) Divisivel por 5?\n\n");
+
+printf("Escolha uma das opcoes acima: ");
+scanf("%i", &c);
+
+switch(c)
+{
+
+case 1: 
+        if( num1 % 3 == 0 )
+        printf("\nE divisivel por 3\n");
+        else
+        printf("\nNao e divisivel por 3\n");
+        
+break;
+case 2:
+        if( num1 % 5 == 0 )        
+        printf("\nE divisivel por 5\n");
+        else
+        printf("\nNao e divisivel por 5\n");
+break;        
+
+default: 
+    printf("\nOpcao invalida");
+}
+}
+
+18. Leia um valor de ponto flutuante com duas casas decimais. Este valor representa um
+valor monetário. A seguir, calcule o menor número de notas e moedas possíveis no qual
+o valor pode ser decomposto. As notas consideradas são de 100, 50, 20, 10, 5, 2. As
+moedas possíveis são de 1, 0.50, 0.25, 0.10, 0.05 e 0.01. A seguir mostre a relação de
+notas necessárias.
+
+int main()
+{
+
+float valor;
+int A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P; 
+
+printf("Digite o valor para ser separado em notas e moeadas: ");
+scanf("%f", &valor);
+
+
+A = valor / 100;
+valor -= (A * 100);
+B = valor / 50;
+valor -= (B * 50);
+C = valor / 20;
+valor -= (C * 20);
+D = valor / 10;
+valor -= (D * 10);
+P = valor / 5;
+valor -= (P * 5);
+E = valor / 2;
+valor -= (E * 2);
+F = valor / 1;
+valor -= (F * 1);
+G = valor / 0.50;
+valor -= (G * 0.50);
+H = valor / 0.25;
+valor -= (H * 0.25);
+I = valor / 0.10;
+valor -= (I * 0.10);
+J = valor / 0.05;
+valor -= (H * 0.05);
+K = valor / 0.01;
+valor -= (K * 0.01);
+
+
+printf("EM %f EXISTEM: ", valor);
+printf("\nNOTAS");
+printf("\nExistem %i nota(s) de 100\n", A);
+printf("Existem %i nota(s) de 50\n", B);
+printf("Existem %i nota(s) de 20\n", C);
+printf("Existem %i nota(s) de 10\n", D);
+printf("Existem %i nota(s) de 5\n", P);
+printf("Existem %i nota(s) de 2\n", E);
+
+printf("\nMOEDAS\n");
+printf("\nExistem %i moeda(s) de 1\n", F);
+printf("Existem %i moeda(s) de 0.50\n", G);
+printf("Existem %i moeda(s) de 0.25\n", H);
+printf("Existem %i moeda(s) de 0.10\n", I);
+printf("Existem %i moeda(s) de 0.05\n", J);
+printf("Existem %i moeda(s) de 0.01\n", K);
+
+}
+19. Leia quatro números (N1, N2, N3, N4), cada um deles com uma casa decimal,
+correspondente às quatro notas de um aluno. Calcule a média com pesos 2, 3, 4 e 1,
+respectivamente, para cada uma destas notas e mostre esta média acompanhada pela
+mensagem "Media: ". Se esta média for maior ou igual a 7.0, imprima a
+mensagem "Aluno aprovado.". Se a média calculada for inferior a 5.0, imprima a
+mensagem "Aluno reprovado.". Se a média calculada for um valor entre 5.0 e 6.9,
+inclusive estas, o programa deve imprimir a mensagem "Aluno em exame.". No caso do
+aluno estar em exame, leia um valor correspondente à nota do exame obtida pelo aluno.
+Imprima então a mensagem "Nota do exame: " acompanhada pela nota digitada.
+Recalcule a média (some a pontuação do exame com a média anteriormente calculada e
+divida por 2). e imprima a mensagem "Aluno aprovado." (caso a média final seja 5.0 ou
+mais ) ou "Aluno reprovado.", (caso a média tenha ficado 4.9 ou menos). Para estes dois
+casos (aprovado ou reprovado após ter pego exame) apresente na última linha uma
+mensagem "Media final: " seguido da média final para esse aluno.
+
+int main()
+{
+
+float num1, num2, num3, num4, media, provaFinal, notaFinal;
+
+printf("Digite 4 numeros: ");
+scanf("%f%f%f%f", &num1, &num2, &num3, &num4);
+
+media = (num1*2+num2*3+num3*4+num4) / 10;
+printf("A media e %f ", media);
+if(media >= 7.0)
+{
+ printf("aluno aprovado");
+
+}else if (media < 5.0)
+{
+printf("aluno reprovado");
+ 
+}else if (media >= 5.0 && media <= 6.9)
+{
+printf("aluno em analise");
+printf("\nQual foi sua nota da recuperacao? ");
+scanf("%f", &provaFinal);
+notaFinal = (provaFinal + media) / 2;
+printf("%f", notaFinal);
+
+}if (notaFinal >= 5)
+{
+    printf("\n\nAluno aprovado com a nota final de %f\n", notaFinal);
+}else if (notaFinal < 5)
+{
+    printf("\n\nAluno reprovado com a nota final de %f\n", notaFinal);
+}
+
+}
+20. Faça um programa que leia os coeficientes de uma equação do segundo grau. Em
+seguida, calcule e mostre as raízes dessa equação, lembrando que as raízes são
+calculadas como
+em que ∆ = b² – 4 * a * c e ax²+ bx + c = 0 representa uma equação do segundo grau. A variável
+a tem de ser diferente de zero. Caso seja igual, imprima a mensagem “Não é equação de
+segundo grau”. Do contrário, imprima:
+• Se ∆ < 0, não existe real. Imprima a mensagem “Não existe raiz”.
+• Se ∆ = 0, existe uma raiz real. Imprima a raiz e a mensagem “Raiz única”.
+• Se ∆ > 0, existem duas raízes reais. Imprima as raízes.
+
+int main()
+{
+
+float a, b, c, delta, x1, x2, raizDelta;
+
+printf("Digite os coeficientes de uma equacao: ");  
+scanf("%f%f%f", &a, &b, &c);
+
+delta = b * b - 4 * a * c;
+raizDelta = sqrt(delta);
+
+if(delta < 0)
+    printf("Nao exite raiz");
+else if(delta == 0)
+{
+     x1 = -b / 2 * a;
+     printf("Exite apenas 1 raiz que eh : %f", x1);
+
+}if (delta > 0)       
+{
+x1 = (-b + sqrt(delta)) / (2 * a);
+x2 = (-b - sqrt(delta)) / (2 * a);
+
+printf("Exitem 2 raizes que sao x1 = %f , x2 = %f", x1, x2);
+}
+}
+*/
