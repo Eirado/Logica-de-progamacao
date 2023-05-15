@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <math.h>
+#include <string.h>
+#include <conio.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main() {
+	
+	int vendedor1[10],vendedor2[10],i,soma1 = 0, soma2 = 0, media1, media2; 
+		printf("Digite as vendas do primeiro vendedor: \n");
+		for(i=0;i<10;i++){
+			scanf("%d", &vendedor1[i]);
+			
+		}
+	    
+		fflush(stdin);
+		printf("Digite as vendas do segundo vendedor: \n");
+		for(i=0;i<10;i++){
+			scanf("%d", &vendedor2[i]);
+		}
+
+		for(i=0;i<10;i++){
+			soma1 = soma1 + vendedor1[i];
+			soma2 = soma2 + vendedor2[i];
+	   }
+		media1 = soma1/10;
+		media2 = soma2/10;
+	
+	if(media1 > media2){
+		printf("\nO vendedor1 vendeu mais");
+		
+	}else{
+	    printf("\nO vendedor2 vendeu mais");
+	}
+	printf("\nA lista de vendas do vendedor 1 eh: ");
+	for(i=0;i<10;i++){
+			printf("%d ", vendedor1[i]);
+			
+	   }
+     
+	 printf("\nA lista de vendas do vendedor 2 eh: ");
+	 for(i=0;i<10;i++){
+           printf("%d ", vendedor2[i]);  
+    }    
+
+	printf("\nA media de vendas do vendedor1 foi %d", media1);
+     printf("\nA media de vendas do vendedor2 foi %d", media2);
+	
+	return 0;
+}
